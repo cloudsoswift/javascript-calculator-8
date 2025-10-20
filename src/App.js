@@ -2,9 +2,8 @@ import { Console } from "@woowacourse/mission-utils";
 
 class App {
   async run() {
-    Console.readLineAsync("덧셈할 문자열을 입력해 주세요.").then((line) => {
-      this.doCalculate(line);
-    });
+    const line = await Console.readLineAsync("덧셈할 문자열을 입력해 주세요.\n");
+    this.doCalculate(line);
   }
   extractDelimiter(str) {
     const regex = /\/\/(.+?)\\n/g;
