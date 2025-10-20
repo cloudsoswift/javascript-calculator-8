@@ -14,9 +14,9 @@ class App {
     // 문자열(str)에 포함된 각 숫자들을 분리하여 숫자 형태로 보관할 배열 result
     const result = [];
     // 쉼표, 콜론, 그리고 사용자가 입력한 커스텀 구분자가 있다면 그를 포함해
-    const delimiter = new RegExp(`,|:${delimiter !== "" ? `|${delimiter}` : ""}`);
+    const newDelimiter = new RegExp(`,|:${delimiter !== "" ? `|${delimiter}` : ""}`);
     // 문자열 나눔
-    const split = str.split(delimiter);
+    const split = str.split(newDelimiter);
     for (const num of split) { 
       result.push(Number(num));
       if (result.at(-1) < 0) { 
