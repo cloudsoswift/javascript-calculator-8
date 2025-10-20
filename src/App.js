@@ -6,8 +6,8 @@ class App {
       this.doCalculate(line);
     });
   }
-  extractDelimiter(str) { 
-    const regex = "\\/\\/(.+?)\\n";
+  extractDelimiter(str) {
+    const regex = /\/\/(.+?)\\n/g;
     const matches = [...str.matchAll(regex)];
     return matches.length > 0 ? matches[0][1] : "";
   }
