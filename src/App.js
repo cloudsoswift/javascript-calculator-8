@@ -25,6 +25,13 @@ class App {
     }
     return result;
   } 
+  sumAllIntegers(integers) { 
+    let sum = 0;
+    for (const int of integers) { 
+      sum += int;
+    }
+    return sum;
+  }
 }
 
 export default App;
