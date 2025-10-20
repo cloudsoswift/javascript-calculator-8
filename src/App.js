@@ -24,7 +24,7 @@ class App {
     for (const num of split) { 
       result.push(Number(num));
       if (result.at(-1) < 0) { 
-        throw new Error('주어진 문자열에는 구분자와 양수만 포함되어야 합니다. 음수는 포함될 수 없습니다');
+        throw new Error('[ERROR] 주어진 문자열에는 구분자와 양수만 포함되어야 합니다. 음수는 포함될 수 없습니다');
       }
     }
     return result;
@@ -46,12 +46,7 @@ class App {
     // 커스텀 구분자 이후 구간으로 문자열 범위 좁힘 ( 커스텀 구분자 없는 경우 그대로 사용 )
     str = index >= 0 ? str.substring(index + 2) : str;
     let arr = [];
-    try {
-      arr = this.splitWithDelimiters(str, delimiter);
-    } catch (e) { 
-      console.error("[ERROR]", e.message);
-      return;
-    }
+    arr = this.splitWithDelimiters(str, delimiter);
     const result = this.sumAllIntegers(arr);
     Console.print(`결과 : ${result}`);
   }
